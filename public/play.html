@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>MemoFlag</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/play.css">
+</head>
+<body>
+<main id="app">
+  <section id="s-join" class="screen center hidden">
+    <h1 class="logo">Memo<span>Flag</span></h1>
+    <form id="join-form">
+      <label>Código da sala</label>
+      <input id="in-code" maxlength="4" autocapitalize="characters" autocomplete="off" placeholder="ABCD">
+      <label>O teu nome</label>
+      <input id="in-name" maxlength="14" autocomplete="off" placeholder="Nome">
+      <p id="join-err" class="err"></p>
+      <button type="submit" class="wide">Entrar</button>
+    </form>
+  </section>
+
+  <section id="s-wait" class="screen center hidden">
+    <h2 id="wait-title">Estás dentro!</h2>
+    <p id="wait-sub" class="muted">À espera que o jogo comece…</p>
+  </section>
+
+  <section id="s-look" class="screen center hidden">
+    <div class="eyes">👀</div>
+    <h1>Olha para o ecrã!</h1>
+    <p class="muted" id="look-round"></p>
+  </section>
+
+  <section id="s-identify" class="screen idscreen hidden">
+    <div class="topbar"><span class="timer" id="timer">40</span><span id="picked">0/5 selecionadas</span></div>
+    <div class="grid" id="grid"></div>
+    <button id="confirm" class="wide">Confirmar</button>
+  </section>
+
+  <section id="s-result" class="screen idscreen hidden">
+    <div class="topbar"><span id="res-title" class="res-title"></span><span id="res-rank"></span></div>
+    <div class="grid" id="res-grid"></div>
+    <p class="muted small" id="res-sub">À espera do próximo passo do host…</p>
+  </section>
+
+  <section id="s-final" class="screen center hidden">
+    <div class="eyes" id="fin-medal">🏁</div>
+    <h1 id="fin-title"></h1>
+    <p class="muted" id="fin-sub"></p>
+    <ul id="fin-board" class="board"></ul>
+  </section>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/play.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MemoFlag</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/host.css">
+</head>
+<body>
+<main id="app">
+  <section id="s-lobby" class="screen hidden">
+    <div class="lobby-left">
+      <h1 class="logo">Memo<span>Flag</span></h1>
+      <p class="lead">Entra no telemóvel em <b id="join-host"></b><br>e escreve o código da sala</p>
+      <div class="code" id="code">----</div>
+      <div class="qr" id="qr"></div>
+    </div>
+    <div class="lobby-right">
+      <h2>Jogadores <span id="count">0/8</span></h2>
+      <ul id="lobby-players" class="chips"></ul>
+      <div class="settings">
+        <div class="row"><label>Rondas</label>
+          <div class="stepper"><button class="ghost" id="r-minus">−</button><b id="r-val">5</b><button class="ghost" id="r-plus">+</button></div>
+        </div>
+        <div class="row"><label>Tempo de memorização</label>
+          <div class="seg"><button id="t10" class="ghost">10 s</button><button id="t15" class="ghost">15 s</button></div>
+        </div>
+      </div>
+      <button id="start" class="big" disabled>Iniciar jogo</button>
+    </div>
+  </section>
+
+  <section id="s-preload" class="screen center hidden">
+    <h2>A preparar a ronda <span id="pre-round"></span>…</h2>
+    <div class="spinner"></div>
+  </section>
+
+  <section id="s-memo" class="screen memo hidden">
+    <div class="memo-top"><span id="memo-round"></span><span id="memo-count" class="memo-count"></span></div>
+    <div class="memo-stage"><div class="flag big-flag" id="memo-flag"><img alt=""></div></div>
+    <div class="bar"><div id="memo-bar"></div></div>
+  </section>
+
+  <section id="s-identify" class="screen identify hidden">
+    <div class="id-main">
+      <div class="id-head"><span id="id-round"></span><span class="timer" id="id-timer">40</span></div>
+      <div class="grid" id="id-grid"></div>
+    </div>
+    <aside class="id-side">
+      <h3>Respostas</h3>
+      <ul id="id-status" class="board"></ul>
+    </aside>
+  </section>
+
+  <section id="s-reveal" class="screen reveal hidden">
+    <div class="rv-main">
+      <div class="id-head"><span id="rv-round"></span><span class="rv-title">Estavam na memorização</span></div>
+      <div class="grid" id="rv-grid"></div>
+      <div class="memo-strip-label">As 10 bandeiras que passaram</div>
+      <div class="memo-strip" id="rv-memo"></div>
+    </div>
+    <aside class="id-side">
+      <h3>Classificação</h3>
+      <ul id="rv-board" class="board"></ul>
+      <button id="next" class="big"></button>
+    </aside>
+  </section>
+
+  <section id="s-final" class="screen final hidden">
+    <h1 class="logo">Pódio</h1>
+    <div class="podium" id="podium"></div>
+    <ul id="final-board" class="board"></ul>
+    <button id="again" class="big">Jogar outra vez</button>
+  </section>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/host.js"></script>
+</body>
+</html>

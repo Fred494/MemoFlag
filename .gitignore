@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.log
+memoflag-flags/
+memoflag-flags.zip
+PROMPT_MemoFlag.md
+.claude/
