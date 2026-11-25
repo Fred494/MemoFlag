@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#ff6b4a"/>
+  <rect x="14" y="10" width="4.5" height="46" rx="2.25" fill="#fff"/>
+  <path d="M18.5 12 C27 8, 33 17, 42 13 C47 11, 50 12, 52 13 L52 37 C50 36, 47 35, 42 37 C33 41, 27 32, 18.5 36 Z" fill="#ffc83d"/>
+  <text x="35.5" y="33" text-anchor="middle" font-family="Trebuchet MS, Segoe UI, Arial, sans-serif" font-weight="900" font-size="22" fill="#232846">?</text>
+</svg>

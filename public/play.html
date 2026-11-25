@@ -4,13 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>MemoFlag</title>
-<link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/play.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="apple-touch-icon" href="/logo.svg">
+<meta name="theme-color" content="#fbf4e8">
+<link rel="stylesheet" href="/style.css?v=3">
+<link rel="stylesheet" href="/play.css?v=3">
 </head>
 <body>
 <main id="app">
   <section id="s-join" class="screen center hidden">
-    <h1 class="logo">Memo<span>Flag</span></h1>
+    <img class="logo-img" src="/logo.svg" alt="">
+      <h1 class="logo">Memo<span>Flag</span></h1>
     <form id="join-form">
       <label>Código da sala</label>
       <input id="in-code" maxlength="4" autocapitalize="characters" autocomplete="off" placeholder="ABCD">
@@ -24,6 +28,7 @@
   <section id="s-wait" class="screen center hidden">
     <h2 id="wait-title">Estás dentro!</h2>
     <p id="wait-sub" class="muted">À espera que o jogo comece…</p>
+    <p class="pill" id="wait-info"></p>
   </section>
 
   <section id="s-look" class="screen center hidden">
@@ -52,6 +57,6 @@
   </section>
 </main>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/play.js"></script>
+<script src="/js/play.js?v=3"></script>
 </body>
 </html>

@@ -48,6 +48,7 @@
         show('wait');
         $('wait-title').textContent = `Olá, ${s.myName}!`;
         $('wait-sub').textContent = 'Estás dentro. À espera que o jogo comece…';
+        $('wait-info').textContent = `${s.settings.rounds} ${s.settings.rounds === 1 ? 'ronda' : 'rondas'} · ${s.settings.memoTime} s para memorizar`;
         break;
       case 'preload':
         show('look');

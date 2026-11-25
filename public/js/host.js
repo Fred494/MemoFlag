@@ -66,7 +66,13 @@
     $('t15').classList.toggle('on', s.settings.memoTime === 15);
     $('start').disabled = !s.players.some(p => p.connected);
   }
-  const setSettings = patch => socket.emit('host:settings', { ...state.settings, ...patch });
+  const setSettings = patch => {
+    const next = { ...state.settings, ...patch };
+    next.rounds = Math.max(1, Math.min(10, next.rounds));
+    state.settings = next; // atualização imediata para cliques rápidos
+    $('r-val').textContent = next.rounds;
+    socket.emit('host:settings', next);
+  };
   $('r-minus').onclick = () => setSettings({ rounds: state.settings.rounds - 1 });
   $('r-plus').onclick = () => setSettings({ rounds: state.settings.rounds + 1 });
   $('t10').onclick = () => setSettings({ memoTime: 10 });

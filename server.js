@@ -18,7 +18,13 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { pingInterval: 10000, pingTimeout: 20000 });
 
-app.use(express.static(path.join(__dirname, 'public'), { maxAge: '1d', index: false }));
+app.use(express.static(path.join(__dirname, 'public'), {
+  index: false,
+  setHeaders: (res, file) => {
+    // bandeiras podem ficar em cache; HTML/CSS/JS são sempre revalidados
+    res.setHeader('Cache-Control', /[\\/]flags[\\/]/.test(file) ? 'public, max-age=604800' : 'no-cache');
+  },
+}));
 app.get('/', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'host.html')));
 app.get('/jogar', (_req, res) => res.sendFile(path.join(__dirname, 'public', 'play.html')));
 app.get('/health', (_req, res) => res.send('ok'));

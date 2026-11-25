@@ -4,13 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MemoFlag</title>
-<link rel="stylesheet" href="/style.css">
-<link rel="stylesheet" href="/host.css">
+<link rel="icon" type="image/svg+xml" href="/logo.svg">
+<link rel="apple-touch-icon" href="/logo.svg">
+<meta name="theme-color" content="#fbf4e8">
+<link rel="stylesheet" href="/style.css?v=3">
+<link rel="stylesheet" href="/host.css?v=3">
 </head>
 <body>
 <main id="app">
   <section id="s-lobby" class="screen hidden">
     <div class="lobby-left">
+      <img class="logo-img" src="/logo.svg" alt="">
       <h1 class="logo">Memo<span>Flag</span></h1>
       <p class="lead">Entra no telemóvel em <b id="join-host"></b><br>e escreve o código da sala</p>
       <div class="code" id="code">----</div>
@@ -75,6 +79,6 @@
   </section>
 </main>
 <script src="/socket.io/socket.io.js"></script>
-<script src="/js/host.js"></script>
+<script src="/js/host.js?v=3"></script>
 </body>
 </html>
